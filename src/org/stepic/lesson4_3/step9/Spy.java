@@ -32,7 +32,6 @@ public class Spy implements MailService {
                         mail.getFrom() + " to " + mail.getTo());
             }
         }
-
         return mail;
     }
 }
