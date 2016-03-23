@@ -18,13 +18,12 @@ public class Spy implements MailService {
 
     @Override
     public Sendable processMail(Sendable mail) {
-        System.out.println("Spy");
         if (mail instanceof MailMessage) {
             if (mail.getFrom().equals(AUSTIN_POWERS)) {
                 LOGGER.log(Level.WARNING, "Detected target mail correspondence: from " +
                         mail.getFrom() + " to " + mail.getTo() + " \"" +((MailMessage) mail).getMessage() + "\"");
             } else {
-                LOGGER.log(Level.WARNING, "Usual correspondence: from " +
+                LOGGER.log(Level.INFO, "Usual correspondence: from " +
                         mail.getFrom() + " to " + mail.getTo());
             }
         }

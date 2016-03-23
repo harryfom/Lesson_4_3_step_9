@@ -10,12 +10,13 @@ public class RealMailService implements MailService {
     String name;
 
     public RealMailService() {
+        counter++;
         name = "RealMailService"+counter;
     }
 
     public RealMailService(String name){
-        this.name = name;
         counter++;
+        this.name = name;
     }
 
     @Override
