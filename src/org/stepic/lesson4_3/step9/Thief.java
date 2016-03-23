@@ -16,6 +16,10 @@ public class Thief implements MailService {
         this.minPrice = minPrice;
     }
 
+    public int getStolenValue(){
+        return stolenValue;
+    }
+
     @Override
     public Sendable processMail(Sendable mail) {
         MailPackage pack;
