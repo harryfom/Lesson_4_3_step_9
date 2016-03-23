@@ -15,15 +15,20 @@ import java.util.logging.Logger;
 public class Spy implements MailService {
     private final static Logger LOGGER = Logger.getLogger(Spy.class.getName());
     private static final String AUSTIN_POWERS = "Austin Powers";
+    private Logger logger;
+
+    public Spy(Logger logger) {
+        this.logger = logger;
+    }
 
     @Override
     public Sendable processMail(Sendable mail) {
         if (mail instanceof MailMessage) {
             if (mail.getFrom().equals(AUSTIN_POWERS)) {
-                LOGGER.log(Level.WARNING, "Detected target mail correspondence: from " +
+                logger.log(Level.WARNING, "Detected target mail correspondence: from " +
                         mail.getFrom() + " to " + mail.getTo() + " \"" + ((MailMessage) mail).getMessage() + "\"");
             } else {
-                LOGGER.log(Level.INFO, "Usual correspondence: from " +
+                logger.log(Level.INFO, "Usual correspondence: from " +
                         mail.getFrom() + " to " + mail.getTo());
             }
         }
