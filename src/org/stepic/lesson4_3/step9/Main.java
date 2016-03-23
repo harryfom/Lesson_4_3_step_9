@@ -13,6 +13,11 @@ public class Main {
         spy.processMail(new MailMessage("Austin Powers", "007", "secret message"));
         spy.processMail(new MailMessage("Штирлиц", "Борман", "secret message"));
 
+        Thief thief = new Thief(150);
+        Sendable sendable = new MailPackage("From","To", new Package("gold", 150));
+        System.out.println(sendable);
+        sendable = thief.processMail(sendable);
+        System.out.println(sendable);
 
     }
 

@@ -28,4 +28,8 @@ public class MailPackage extends AbstractSendable {
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "From: " + from + " To: " + to + " package: " + content.getContent() + " price: " + content.getPrice();
+    }
 }
