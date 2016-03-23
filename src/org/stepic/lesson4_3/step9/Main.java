@@ -19,6 +19,11 @@ public class Main {
         sendable = thief.processMail(sendable);
         System.out.println(sendable);
 
+        Inspector in = new Inspector();
+        System.out.println(in.processMail(new MailPackage("From", "To", new Package("weapos", 150))));
+        System.out.println(in.processMail(sendable));
+
+
     }
 
 }
